@@ -132,8 +132,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/LCMP-
 # setup bibica.net and api.bibica.net
 wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/LCMP-Minimal/main/bibica.net/bibica.net.conf -O /etc/caddy/conf.d/bibica.net.conf
 wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/LCMP-Minimal/main/bibica.net/api.bibica.net.conf -O /etc/caddy/conf.d/api.bibica.net.conf
-wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/LCMP-Minimal/main/bibica.net/i0.bibica.net.conf -O /etc/caddy/conf.d/i0.bibica.net.conf
-wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/LCMP-Minimal/main/bibica.net/i.bibica.net.conf -O /etc/caddy/conf.d/i.bibica.net.conf
+wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/LCMP-Minimal/main/bibica.net/comment.bibica.net.conf -O /etc/caddy/conf.d/comment.bibica.net.conf
 systemctl restart caddy
 mkdir -p /var/www/bibica.net/htdocs
 cd /var/www/bibica.net/htdocs

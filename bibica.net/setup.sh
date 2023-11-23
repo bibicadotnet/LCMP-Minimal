@@ -147,22 +147,11 @@ ln -s /var/www /root/
 ln -s /etc/caddy /root/
 
 # setup docker
-# curl -sSL https://get.docker.com | sh
-# sudo usermod -aG docker $(whoami)
-# sudo systemctl start docker
-# sudo systemctl enable docker
-# sudo apt install docker-compose -y
-
-# setup Umami
-# mkdir -p /root/umami-analytics
-# cd /root/umami-analytics
-# wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/LCMP-Minimal/main/bibica.net/umami-analytics/docker-compose.yml -O /root/umami-analytics/docker-compose.yml
-# docker-compose up -d --build --remove-orphans --force-recreate
-# cd
-
-# setup analytics.bibica.net
-wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/LCMP-Minimal/main/bibica.net/analytics.bibica.net.conf -O /etc/caddy/conf.d/analytics.bibica.net.conf
-systemctl restart caddy
+curl -sSL https://get.docker.com | sh
+sudo usermod -aG docker $(whoami)
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo apt install docker-compose -y
 
 # show info database
 green() {

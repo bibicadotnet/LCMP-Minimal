@@ -23,4 +23,3 @@ sudo wget https://go.bibica.net/lcmp-minimal -O server.sh && sudo chmod +x serve
 ```shell
 sudo wget https://raw.githubusercontent.com/bibicadotnet/LCMP-Minimal/main/setup_ip6.sh -O server.sh && sudo chmod +x server.sh && sudo ./server.sh
 ```
-Open source projects using 1Password Teams

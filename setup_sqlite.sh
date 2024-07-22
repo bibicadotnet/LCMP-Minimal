@@ -78,7 +78,7 @@ sudo rm -r /etc/php/7.4/apache2
 systemctl restart php7.4-fpm
 
 # Optimization PHP
-wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/LCMP-Minimal/main/php.ini -O /etc/php/7.4/fpm/php.ini
+wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/LCMP-Minimal/main/php_sqlite3.ini -O /etc/php/7.4/fpm/php.ini
 wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/LCMP-Minimal/main/www.conf -O /etc/php/7.4/fpm/pool.d/www.conf
 systemctl restart php7.4-fpm
 wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/LCMP-Minimal/main/Caddyfile -O /etc/caddy/Caddyfile

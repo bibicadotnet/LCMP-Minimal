@@ -42,11 +42,13 @@ sudo apt update && sudo apt install caddy -y
 #caddy add-package github.com/sillygod/cdp-cache
 mkdir -p /data/www/default
 mkdir -p /var/log/caddy/
+mkdir -p /var/lib/php/opcache
 mkdir -p /etc/caddy/conf.d/
 chown -R caddy:caddy /data/www/default
 chown -R caddy:caddy /var/log/caddy/
 chown -R caddy:caddy /etc/caddy/
 chown -R caddy:caddy /etc/ssl
+chown root.caddy /var/lib/php/opcache
 
 # Setup php 7.4
 sudo apt install -y apt-transport-https lsb-release ca-certificates wget 

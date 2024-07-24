@@ -2,6 +2,21 @@
     admin off
 }
 
+(wordpress_security) {
+	@forbidden {
+		not path /wp-includes/ms-files.php
+		path /wp-admin/includes/*.php
+		path /wp-includes/*.php
+		path /wp-config.php
+		path /wp-content/uploads/*.php
+		path /.user.ini
+		path /wp-content/debug.log
+		path *.sql
+		path *.sqlite
+	}
+	respond @forbidden "Access denied" 403
+}
+
 :80 {
     # Set this path to your site's directory.
     root * /data/www/default

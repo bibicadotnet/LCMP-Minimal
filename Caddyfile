@@ -51,10 +51,9 @@
         index index.html
     }
     # Serve a PHP site through php-fpm:
-    php_fastcgi unix//run/php/php7.4-fpm.sock {
-        split .php
-        index index.php
+    php_fastcgi unix//run/php/php7.4-fpm.sock
     }
+
     log {
         output file /var/log/caddy/access.log
     }

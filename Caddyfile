@@ -3,7 +3,7 @@
 }
 
 (wordpress_security) {
-	@forbidden {
+	@disallowed {
 		not path /wp-includes/ms-files.php
 		path /wp-admin/includes/*.php
 		path /wp-includes/*.php
@@ -14,7 +14,32 @@
 		path *.sql
 		path *.sqlite
 	}
-	respond @forbidden "Access denied" 403
+	rewrite @disallowed /index.php
+}
+
+(static_header) {
+	@static {
+		file
+		path *.css *.js *.ico *.woff *.woff2
+	}
+	handle @static {
+		header Cache-Control "public, max-age=31536000"
+	}
+
+	@static-img {
+		file
+		path *.gif *.jpg *.jpeg *.png *.svg *.webp *.avif
+	}
+	handle @static-img {
+		header Cache-Control "public, max-age=31536000, immutable"
+	}
+}
+
+(header_remove) {
+	header -Link
+	header -Server
+	header -X-Pingback
+	header -X-Powered-By
 }
 
 :80 {

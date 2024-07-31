@@ -43,19 +43,19 @@
 }
 
 :80 {
-    # Set this path to your site's directory.
-    root * /data/www/default
-    encode zstd gzip
-    # Enable the static file server.
-    file_server {
-        index index.html
-    }
-    # Serve a PHP site through php-fpm:
-    php_fastcgi unix//run/php/php7.4-fpm.sock
-    }
-
-    log {
-        output file /var/log/caddy/access.log
-    }
+	root * /data/www/default
+	encode zstd gzip
+	php_fastcgi unix//run/php/php7.4-fpm.sock
+	file_server {
+		index index.html
+	}
+	log {
+		output file /var/log/caddy/access.log {
+			roll_size 100mb
+			roll_keep 3
+			roll_keep_for 7d
+		}
+	}
 }
+
 import /etc/caddy/conf.d/*.conf
